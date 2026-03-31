@@ -1,0 +1,31 @@
+﻿
+
+
+in progress .....
+
+		Progress Bar when Click Save
+
+
+
+
+
+
+if you are already in the clicked button in panel list dont reload it again
+
+you can update delete change the list view and disable the forms after adding ( or don;t show empty things after adding :))))))))
+
+Make a title And Dark Mode for the responses Form To
+
+add extra way to see the responses by clicking a button or link
+
+Icon :)
+
+you can converrt to pdf too
+
+option too choose between arabic or english before start so you can chagne the vewi and translate based on that from right to left
+
+we need to make the main is arabic and you have oprion to translate it to english version too while buidling
+
+You can Choose First From Multible Desings
+
+auto convert the image to jpeg or change it based on the image ( not sure )
