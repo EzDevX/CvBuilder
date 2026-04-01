@@ -1,0 +1,31 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio settings
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VSCode
+.idea/
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: temporary files
+*.tmp
+*.cache
+TODOs.txt
+BahgatSaber.png
