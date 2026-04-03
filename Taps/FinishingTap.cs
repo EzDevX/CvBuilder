@@ -27,8 +27,13 @@ namespace CvBuilder
         }
 
 
-        private void ButtonBuildAndSave_Click(object sender, EventArgs e)
+        private  void ButtonBuildAndSave_Click(object sender, EventArgs e)
         {
+            ProgressBarFinishing.Visible = true;
+            ButtonBuildAndSave.BackColor = Color.Gray;
+            ButtonBuildAndSave.ForeColor = Color.FromArgb(64, 64, 64);
+            ButtonBuildAndSave.Text = "Loading ...";
+            ButtonBuildAndSave.Enabled = false;
             MainForm.Build();
         }
 
@@ -45,10 +50,29 @@ namespace CvBuilder
             }
         }
 
+        public  void IncreaseProgressBar (string Text , int Volume)
+        {
+            System.Threading.Thread.Sleep(500);
+            ProgressBarFinishing.Value += Volume;
+
+        }
+
+        public void ShutProgressBar()
+        {
+            ProgressBarFinishing.Visible = false;
+            ButtonBuildAndSave.BackColor = Color.FromArgb(0,192,0);
+            ButtonBuildAndSave.ForeColor = Color.Black;
+            ButtonBuildAndSave.Text = "Build And Save";
+            ButtonBuildAndSave.Enabled = true;
+
+
+        }
+
         public void DarkMode()
         {
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
+
         }
         public void LightMode()
         {
@@ -59,6 +83,11 @@ namespace CvBuilder
         private void FinishingTap_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void LabelFinishing_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

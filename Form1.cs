@@ -22,7 +22,6 @@ namespace CvBuilder
             InitializeComponent();
             this.KeyPreview = true;
             
-            
         }
         private string SettingsFileName = "Settings.txt";
 
@@ -51,6 +50,7 @@ namespace CvBuilder
         PersonalSkillsTap MyPersonalSkillsTap = new PersonalSkillsTap();
         FinishingTap MyFinishingTap = new FinishingTap();
         
+        
 
 
         public csPerson FillPeroson()
@@ -74,16 +74,30 @@ namespace CvBuilder
 
         }
 
+        public void IncreaseProgress(string Text , int Volume)
+        {
+            MyFinishingTap.IncreaseProgressBar(Text, Volume);
+        }
+
+        public void ShutProgressBar()
+        {
+            MyFinishingTap.ShutProgressBar();
+        }
 
         public void Build()
         {
+            IncreaseProgress("Gathering Data", 20);
+
             csPerson MyPerson = FillPeroson();
 
             Engine MyEngine = new Engine();
+            MyEngine.MainForm = this;
 
             MyEngine.LunchCV(MyPerson, MyFinishingTap.FileName());
 
-            MessageBox.Show("Finished!");
+            if(MessageBox.Show("Your CV is Ready!" , "Finished!" , MessageBoxButtons.OK , MessageBoxIcon.Information) == DialogResult.OK){
+                ShutProgressBar();
+            }
 
 
         }

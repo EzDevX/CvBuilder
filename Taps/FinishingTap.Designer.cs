@@ -35,6 +35,7 @@
             this.ButtonBrowseFiles = new System.Windows.Forms.Button();
             this.ButtonBuildAndSave = new System.Windows.Forms.Button();
             this.MySaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ProgressBarFinishing = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // label1
@@ -99,11 +100,20 @@
             this.ButtonBuildAndSave.UseVisualStyleBackColor = false;
             this.ButtonBuildAndSave.Click += new System.EventHandler(this.ButtonBuildAndSave_Click);
             // 
+            // ProgressBarFinishing
+            // 
+            this.ProgressBarFinishing.Location = new System.Drawing.Point(260, 399);
+            this.ProgressBarFinishing.Name = "ProgressBarFinishing";
+            this.ProgressBarFinishing.Size = new System.Drawing.Size(270, 35);
+            this.ProgressBarFinishing.TabIndex = 9;
+            this.ProgressBarFinishing.Visible = false;
+            // 
             // FinishingTap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.ProgressBarFinishing);
             this.Controls.Add(this.ButtonBuildAndSave);
             this.Controls.Add(this.ButtonBrowseFiles);
             this.Controls.Add(this.TextBoxSaveLocation);
@@ -129,5 +139,6 @@
         private System.Windows.Forms.Button ButtonBrowseFiles;
         private System.Windows.Forms.Button ButtonBuildAndSave;
         private System.Windows.Forms.SaveFileDialog MySaveFileDialog;
+        private System.Windows.Forms.ProgressBar ProgressBarFinishing;
     }
 }

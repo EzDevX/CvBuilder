@@ -96,7 +96,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(427, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 21);
+            this.label4.Size = new System.Drawing.Size(36, 21);
             this.label4.TabIndex = 2;
             this.label4.Text = "To :";
             // 
@@ -134,6 +134,7 @@
             this.ListViewExperiences.UseCompatibleStateImageBehavior = false;
             this.ListViewExperiences.View = System.Windows.Forms.View.Details;
             this.ListViewExperiences.ItemActivate += new System.EventHandler(this.ListViewExperiences_ItemActivate);
+            this.ListViewExperiences.SelectedIndexChanged += new System.EventHandler(this.ListViewExperiences_SelectedIndexChanged);
             // 
             // ColumnTitle
             // 

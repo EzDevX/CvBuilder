@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CvBuilder
 {
     public class Engine
     {
 
+        public Form1 MainForm;
+
         public void LunchCV(csPerson Person , string FileName)
         {
+            MainForm.IncreaseProgress("Preparing Fonts and Margins!", 10);
+
             WORD MyWordFile = new WORD(FileName);
 
             MyWordFile.ChangeMargin(WORD.enMargin.enNarrow);
@@ -63,14 +68,20 @@ namespace CvBuilder
 
             if (Person.PersonalInfo.IsPersonalPhoto)
             {
+                MainForm.IncreaseProgress("Adding the personl photo!", 10);
+
                 MyWordFile.AddPicture(Person.PersonalInfo.PersonalPhoto , 4 , 5);
                 MyWordFile.AddTextBox(Person.PersonalInfo.FullName(), HeaderSet ,14.5,5);
             }
             else
             {
+                MainForm.IncreaseProgress("writing the header name!", 10);
+
                 MyWordFile.AddTextLine(Person.PersonalInfo.FullName(), HeaderSet);
 
             }
+
+            MainForm.IncreaseProgress("writing the Personal Info", 10);
 
             MyWordFile.AddTextLine("Personal Info", TitleSet);
 
@@ -81,12 +92,16 @@ namespace CvBuilder
             MyWordFile.AddTextLine("Marital Statues	: " + Person.PersonalInfo.MaritalState, NormalSet);
             MyWordFile.AddTextLine("Military Statues	: " + Person.PersonalInfo.MilitartState, NormalSet);
 
+            MainForm.IncreaseProgress("writing the Contact Info", 10);
+
             MyWordFile.AddTextLine("Contact Info", TitleSet);
 
             MyWordFile.AddTextLine("Phone No.1	: " + Person.ContactInfo.FirstPhoneNumber, NormalSet);
             MyWordFile.AddTextLine("Phone No.2	:" + Person.ContactInfo.SecondPhoneNumber, NormalSet);
             MyWordFile.AddTextLine("Address		: " + Person.ContactInfo.City + " ," + Person.ContactInfo.Country, NormalSet);
             MyWordFile.AddTextLine("Email		: " + Person.ContactInfo.Email, NormalSet);
+
+            MainForm.IncreaseProgress("writing the Eduction Info", 10);
 
             MyWordFile.AddTextLine("Education", TitleSet);
 
@@ -97,6 +112,8 @@ namespace CvBuilder
                 MyWordFile.AddTextLine("Graduation Grade : " + Education.Grade + " - " + Education.Year, NormalSet);
 
             }
+
+            MainForm.IncreaseProgress("writing the Experiences", 10);
 
 
             MyWordFile.AddTextLine("Experiences", TitleSet);
@@ -116,6 +133,8 @@ namespace CvBuilder
 
             }
 
+            MainForm.IncreaseProgress("Courses & Certificates !", 10);
+
 
             MyWordFile.AddTextLine("Courses & Certificates", TitleSet);
 
@@ -125,6 +144,7 @@ namespace CvBuilder
                 MyWordFile.AddTextLine(OneCertificate.Institute + " - " + OneCertificate.DateObtained, NormalSet);
             }
 
+            MainForm.IncreaseProgress("Languages!", 5);
 
 
             MyWordFile.AddTextLine("Languages", TitleSet);
@@ -133,6 +153,8 @@ namespace CvBuilder
             {
                 MyWordFile.AddTextLine(OneLanguage.Name + "  [ " + OneLanguage.Level + " ]", NormalSet);
             }
+
+            MainForm.IncreaseProgress("Personal Skills!", 5);
 
             MyWordFile.AddTextLine("Personal Skills", TitleSet);
 
