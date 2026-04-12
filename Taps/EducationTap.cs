@@ -18,6 +18,15 @@ namespace CvBuilder
         }
         public Form1 MainForm;
 
+        public bool IsEmpty()
+        {
+            if(ListViewEducation.Items.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public List<csEducationInfo> EducationInfos()
         {
             List<csEducationInfo> EducationInfos = new List<csEducationInfo>();
@@ -70,6 +79,8 @@ namespace CvBuilder
             label3.ForeColor = Color.White;
             label4.ForeColor = Color.White;
             label5.ForeColor = Color.White;
+            ComboBoxGraduationGrade.BackColor = Color.FromArgb(55, 55, 55);
+            ComboBoxGraduationGrade.ForeColor = Color.White;
 
             ListViewEducation.BackColor = Color.FromArgb(55, 55, 55);
             ListViewEducation.ForeColor = Color.White;
@@ -87,6 +98,8 @@ namespace CvBuilder
             label3.ForeColor = Color.Black;
             label4.ForeColor = Color.Black;
             label5.ForeColor = Color.Black;
+            ComboBoxGraduationGrade.BackColor = Color.Silver;
+            ComboBoxGraduationGrade.ForeColor = Color.Black;
 
 
             ListViewEducation.BackColor = Color.Silver;
@@ -98,9 +111,22 @@ namespace CvBuilder
 
         private void EducationTap_Load(object sender, EventArgs e)
         {
-      }
+           
+
+
+        }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBoxGraduationGrade_TextChanged(object sender, EventArgs e)
+        {
+            ComboBoxGraduationGrade.Text = "";
+        }
+
+        private void ComboBoxGraduationGrade_TextUpdate(object sender, EventArgs e)
         {
 
         }

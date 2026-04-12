@@ -18,6 +18,15 @@ namespace CvBuilder
         }
         public Form1 MainForm;
 
+        public bool IsEmpty()
+        {
+            if(ListViewLanguages.Items.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public List<csLanguageInfo> Languages()
         {
             List<csLanguageInfo> AllLanguages = new List<csLanguageInfo>();
@@ -51,6 +60,8 @@ namespace CvBuilder
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
             label5.ForeColor = Color.White;
+            ComboBoxLevel.BackColor = Color.FromArgb(55, 55, 55);
+            ComboBoxLevel.ForeColor = Color.White;
 
             ListViewLanguages.BackColor = Color.FromArgb(55, 55, 55);
             ListViewLanguages.ForeColor = Color.White;
@@ -64,6 +75,8 @@ namespace CvBuilder
             label1.ForeColor = Color.Black;
             label2.ForeColor = Color.Black;
             label5.ForeColor = Color.Black;
+            ComboBoxLevel.BackColor = Color.Silver;
+            ComboBoxLevel.ForeColor = Color.Black;
 
 
             ListViewLanguages.BackColor = Color.Silver;
@@ -87,6 +100,16 @@ namespace CvBuilder
             ListViewLanguages.Items.Add(LanguageRecord);
             ListViewLanguages.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
+        }
+
+        private void ComboBoxLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBoxLevel_TextChanged(object sender, EventArgs e)
+        {
+            ComboBoxLevel.Text = "";
         }
     }
 }

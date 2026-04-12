@@ -51,11 +51,17 @@ namespace CvBuilder
         FinishingTap MyFinishingTap = new FinishingTap();
         
         
-
+        public bool IsEmpty()
+        {
+            if(MyContactInfoTap.IsEmpty() || MyCoursesTap.IsEmpty() || MyEducationTap.IsEmpty() || MyExperienceTap.IsEmpty() || MyLanguagesTap.IsEmpty() || MyPersonalInfoTap.IsEmpty() || MyPersonalSkillsTap.IsEmpty())
+            {
+                return true;
+            }
+            return false;
+        }
 
         public csPerson FillPeroson()
         {
-
             csPerson MyPerson = new csPerson();
 
             MyPerson.PersonalInfo = MyPersonalInfoTap.PersonalInfo();
@@ -74,6 +80,17 @@ namespace CvBuilder
 
         }
 
+        public void UpdateFileName(string Text)
+        {
+            MyFinishingTap.SetFileName(Text);
+        }
+
+        public void UpdateLocationName(string Text)
+        {
+            MyFinishingTap.SetLocationName(Text);
+
+        }
+
         public void IncreaseProgress(string Text , int Volume)
         {
             MyFinishingTap.IncreaseProgressBar(Text, Volume);
@@ -88,22 +105,37 @@ namespace CvBuilder
         {
             IncreaseProgress("Gathering Data", 20);
 
-            csPerson MyPerson = FillPeroson();
-
-            Engine MyEngine = new Engine();
-            MyEngine.MainForm = this;
-
-            MyEngine.LunchCV(MyPerson, MyFinishingTap.FileName());
-
-            if(MessageBox.Show("Your CV is Ready!" , "Finished!" , MessageBoxButtons.OK , MessageBoxIcon.Information) == DialogResult.OK){
-                ShutProgressBar();
+            if (IsEmpty())
+            {
+                if(MessageBox.Show("Fill All Required Data First !", "Missing Data!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    ShutProgressBar();
+                }
+                
             }
+            else
+            {
+                csPerson MyPerson = FillPeroson();
+
+                Engine MyEngine = new Engine();
+                MyEngine.MainForm = this;
+
+                MyEngine.LunchCV(MyPerson, MyFinishingTap.FileName());
+
+                if (MessageBox.Show("Your CV is Ready!", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    ShutProgressBar();
+                }
+            }
+
+
 
 
         }
 
         private void AutoFillForm()
         {
+            MyPersonalInfoTap.Flag = true;
             MyPersonalInfoTap.FirstName("Daniel");
             MyPersonalInfoTap.LastName("Alexander Morgan");
             MyPersonalInfoTap.DateOfBirth("14 March 1996");
@@ -112,8 +144,7 @@ namespace CvBuilder
             MyPersonalInfoTap.MaritalStatus("Single");
             MyPersonalInfoTap.MilitaryState("Exempted");
             MyPersonalInfoTap.SetPersonalPhoto(@"D:\Repos\CvBuilder\BahgatSaber.png");
-
-
+            MyPersonalInfoTap.Flag = false;
 
 
 

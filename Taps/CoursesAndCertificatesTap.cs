@@ -18,6 +18,15 @@ namespace CvBuilder
         }
         public Form1 MainForm;
 
+        public bool IsEmpty()
+        {
+            if(ListViewCertificates.Items.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public List<csCertificatInfo> Certificates()
         {
             List<csCertificatInfo> AllCertificates = new List<csCertificatInfo>();

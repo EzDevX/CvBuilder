@@ -54,6 +54,8 @@
             this.TextBoxFileName.Name = "TextBoxFileName";
             this.TextBoxFileName.Size = new System.Drawing.Size(576, 29);
             this.TextBoxFileName.TabIndex = 3;
+            this.TextBoxFileName.Text = "My_CV";
+            this.TextBoxFileName.TextChanged += new System.EventHandler(this.TextBoxFileName_TextChanged);
             // 
             // label2
             // 
@@ -69,8 +71,10 @@
             // 
             this.TextBoxSaveLocation.Location = new System.Drawing.Point(68, 201);
             this.TextBoxSaveLocation.Name = "TextBoxSaveLocation";
+            this.TextBoxSaveLocation.ReadOnly = true;
             this.TextBoxSaveLocation.Size = new System.Drawing.Size(576, 29);
             this.TextBoxSaveLocation.TabIndex = 3;
+            this.TextBoxSaveLocation.Text = "My_CV.docx";
             // 
             // ButtonBrowseFiles
             // 

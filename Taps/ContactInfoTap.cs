@@ -18,6 +18,19 @@ namespace CvBuilder
         }
         public Form1 MainForm;
 
+        public bool IsEmpty()
+        {
+            if(TextBoxFirstPhoneNumber.Text == ""
+                ||TextBoxCity.Text == ""
+                || TextBoxCountry.Text == ""
+                || TextBoxSecondPhoneNumber.Text == ""
+                || TextBoxEmail.Text == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
         public csContactInfo ContactInfo()
         {
             csContactInfo MyContactInfo = new csContactInfo();

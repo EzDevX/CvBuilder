@@ -69,6 +69,7 @@
             this.TextBoxFirstName.Name = "TextBoxFirstName";
             this.TextBoxFirstName.Size = new System.Drawing.Size(299, 29);
             this.TextBoxFirstName.TabIndex = 1;
+            this.TextBoxFirstName.TextChanged += new System.EventHandler(this.TextBoxFirstName_TextChanged);
             // 
             // label2
             // 
@@ -86,6 +87,7 @@
             this.TextBoxLastName.Name = "TextBoxLastName";
             this.TextBoxLastName.Size = new System.Drawing.Size(299, 29);
             this.TextBoxLastName.TabIndex = 1;
+            this.TextBoxLastName.TextChanged += new System.EventHandler(this.TextBoxLastName_TextChanged);
             // 
             // label3
             // 
@@ -149,6 +151,7 @@
             this.ComboBoxMaritalState.Name = "ComboBoxMaritalState";
             this.ComboBoxMaritalState.Size = new System.Drawing.Size(297, 29);
             this.ComboBoxMaritalState.TabIndex = 4;
+            this.ComboBoxMaritalState.TextChanged += new System.EventHandler(this.ComboBoxMaritalState_TextChanged);
             // 
             // label6
             // 
@@ -171,6 +174,8 @@
             this.ComboBoxMilitaryState.Name = "ComboBoxMilitaryState";
             this.ComboBoxMilitaryState.Size = new System.Drawing.Size(297, 29);
             this.ComboBoxMilitaryState.TabIndex = 4;
+            this.ComboBoxMilitaryState.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMilitaryState_SelectedIndexChanged);
+            this.ComboBoxMilitaryState.TextChanged += new System.EventHandler(this.ComboBoxMilitaryState_TextChanged);
             // 
             // label7
             // 
@@ -192,6 +197,7 @@
             this.ComboBoxGender.Name = "ComboBoxGender";
             this.ComboBoxGender.Size = new System.Drawing.Size(302, 29);
             this.ComboBoxGender.TabIndex = 4;
+            this.ComboBoxGender.TextChanged += new System.EventHandler(this.ComboBoxGender_TextChanged);
             // 
             // TextBoxDateOfBirth
             // 

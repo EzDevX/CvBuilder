@@ -126,6 +126,8 @@
             this.ComboBoxLevel.Name = "ComboBoxLevel";
             this.ComboBoxLevel.Size = new System.Drawing.Size(332, 29);
             this.ComboBoxLevel.TabIndex = 3;
+            this.ComboBoxLevel.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLevel_SelectedIndexChanged);
+            this.ComboBoxLevel.TextChanged += new System.EventHandler(this.ComboBoxLevel_TextChanged);
             // 
             // LanguagesTap
             // 

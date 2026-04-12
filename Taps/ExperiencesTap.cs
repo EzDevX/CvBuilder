@@ -17,6 +17,16 @@ namespace CvBuilder
             InitializeComponent();
         }
         public Form1 MainForm;
+
+        public bool IsEmpty()
+        {
+            if(ListViewExperiences.Items.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private ResponsesForm MyForm = new ResponsesForm();
 
 

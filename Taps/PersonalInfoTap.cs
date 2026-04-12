@@ -18,8 +18,25 @@ namespace CvBuilder
             InitializeComponent();
         }
 
+        public bool Flag = false;
+
         public bool IsPersonalPhoto = false;
         public Image MyPersonlPhoto;
+
+        public bool IsEmpty()
+        {
+            if(TextBoxFirstName.Text == ""
+                || TextBoxLastName.Text == ""
+                || TextBoxDateOfBirth.Text == ""
+                || ComboBoxGender.Text == ""
+                || ComboBoxMaritalState.Text == ""
+                || ComboBoxMilitaryState.Text == ""
+                )
+            {
+                return true;
+            }
+            return false;
+        }
 
         public Form1 MainForm;
 
@@ -60,6 +77,7 @@ namespace CvBuilder
         public void MaritalStatus(string Current)
         {
             ComboBoxMaritalState.SelectedItem = Current;
+
         }
         public void MilitaryState(string Current)
         {
@@ -85,6 +103,14 @@ namespace CvBuilder
             label7.ForeColor = Color.White;
             label8.ForeColor = Color.White;
             label9.ForeColor = Color.White;
+            ComboBoxGender.BackColor = Color.FromArgb(55, 55, 55);
+            ComboBoxMaritalState.BackColor = Color.FromArgb(55, 55, 55);
+            ComboBoxMilitaryState.BackColor = Color.FromArgb(55, 55, 55);
+            ComboBoxGender.ForeColor = Color.White;
+            ComboBoxMaritalState.ForeColor = Color.White;
+            ComboBoxMilitaryState.ForeColor = Color.White;
+
+
 
             RadioButtonOFF.ForeColor = Color.White;
             RadioButtonON.ForeColor = Color.White;
@@ -104,6 +130,12 @@ namespace CvBuilder
             label7.ForeColor = Color.Black;
             label8.ForeColor = Color.Black;
             label9.ForeColor = Color.Black;
+            ComboBoxGender.BackColor = Color.Silver;
+            ComboBoxMaritalState.BackColor = Color.Silver;
+            ComboBoxMilitaryState.BackColor = Color.Silver;
+            ComboBoxGender.ForeColor = Color.Black;
+            ComboBoxMaritalState.ForeColor = Color.Black;
+            ComboBoxMilitaryState.ForeColor = Color.Black;
 
             RadioButtonOFF.ForeColor = Color.Black;
             RadioButtonON.ForeColor = Color.Black;
@@ -164,6 +196,52 @@ namespace CvBuilder
 
             }
 
+        }
+
+        private void TextBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+
+             MainForm.UpdateFileName(TextBoxFirstName.Text + "_" + TextBoxLastName.Text + "_" + "CV");
+            MainForm.UpdateLocationName(TextBoxFirstName.Text + "_" + TextBoxLastName.Text + "_" + "CV.docx");
+        }
+
+        private void TextBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            MainForm.UpdateFileName(TextBoxFirstName.Text + "_" + TextBoxLastName.Text + "_" + "CV");
+            MainForm.UpdateLocationName(TextBoxFirstName.Text + "_" + TextBoxLastName.Text + "_" + "CV.docx");
+
+        }
+
+        private void ComboBoxMaritalState_TextChanged(object sender, EventArgs e)
+        {
+            if (!Flag)
+            {
+                ComboBoxMaritalState.Text = "";
+
+            }
+        }
+
+        private void ComboBoxGender_TextChanged(object sender, EventArgs e)
+        {
+            if (!Flag)
+            {
+                ComboBoxGender.Text = "";
+
+            }
+        }
+
+        private void ComboBoxMilitaryState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ComboBoxMilitaryState_TextChanged(object sender, EventArgs e)
+        {
+            if (!Flag)
+            {
+                ComboBoxMilitaryState.Text = "";
+
+            }
         }
     }
 }

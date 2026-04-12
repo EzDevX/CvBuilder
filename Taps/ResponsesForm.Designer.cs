@@ -42,7 +42,7 @@
             this.ListBoxResponses.Location = new System.Drawing.Point(12, 11);
             this.ListBoxResponses.Name = "ListBoxResponses";
             this.ListBoxResponses.ScrollAlwaysVisible = true;
-            this.ListBoxResponses.Size = new System.Drawing.Size(841, 420);
+            this.ListBoxResponses.Size = new System.Drawing.Size(620, 420);
             this.ListBoxResponses.TabIndex = 0;
             // 
             // ButtonOkay

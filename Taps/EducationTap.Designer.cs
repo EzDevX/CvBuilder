@@ -85,7 +85,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(515, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 21);
+            this.label3.Size = new System.Drawing.Size(141, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Graduation Year :";
             // 
@@ -102,6 +102,7 @@
             // 
             // ComboBoxGraduationGrade
             // 
+            this.ComboBoxGraduationGrade.BackColor = System.Drawing.Color.Silver;
             this.ComboBoxGraduationGrade.FormattingEnabled = true;
             this.ComboBoxGraduationGrade.Items.AddRange(new object[] {
             "Excellent",
@@ -112,6 +113,8 @@
             this.ComboBoxGraduationGrade.Name = "ComboBoxGraduationGrade";
             this.ComboBoxGraduationGrade.Size = new System.Drawing.Size(217, 29);
             this.ComboBoxGraduationGrade.TabIndex = 5;
+            this.ComboBoxGraduationGrade.TextUpdate += new System.EventHandler(this.ComboBoxGraduationGrade_TextUpdate);
+            this.ComboBoxGraduationGrade.TextChanged += new System.EventHandler(this.ComboBoxGraduationGrade_TextChanged);
             // 
             // ButtonAddEducation
             // 

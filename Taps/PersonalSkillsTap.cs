@@ -18,6 +18,15 @@ namespace CvBuilder
         }
         public Form1 MainForm;
 
+        public bool IsEmpty()
+        {
+            if(ListBoxSkills.Items.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private int Counter = 1;
 
         public List<csPersonalSkillInfo> Skills()
