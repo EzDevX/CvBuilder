@@ -169,6 +169,7 @@ namespace CvBuilder
             label8.Visible = true;
             PictureBoxPersonalPhoto.Visible = true;
             ButtonAddPhoto.Visible = true;
+            ButtonAddPhoto.Enabled = true;
             IsPersonalPhoto = true;
         }
 
@@ -179,11 +180,14 @@ namespace CvBuilder
             PictureBoxPersonalPhoto.Visible = false;
             ButtonAddPhoto.Visible = false;
             IsPersonalPhoto = false;
+            ButtonDeletePhoto.Visible = false;
+            ButtonUpdatePhoto.Visible = false;
+
         }
 
         private void ButtonAddPhoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog1.Filter = "JPG Files! (*.jpg)|*.jpg|PNG Files! (*.png)|*.png|JPEG Files! (*.jpeg)|*.jpeg";
+            OpenFileDialog1.Filter = "Photos |*.jpg;*.png;*.jpeg";
             OpenFileDialog1.Multiselect = false;
 
             if(OpenFileDialog1.ShowDialog() == DialogResult.OK)
@@ -195,6 +199,13 @@ namespace CvBuilder
                 }
 
             }
+
+            if(PictureBoxPersonalPhoto.Image != null)
+            {
+                ButtonDeletePhoto.Visible = true;
+                ButtonUpdatePhoto.Visible = true;
+            }
+            ButtonAddPhoto.Enabled = false;
 
         }
 
@@ -241,6 +252,14 @@ namespace CvBuilder
             {
                 ComboBoxMilitaryState.Text = "";
 
+            }
+        }
+
+        private void ButtonDeletePhoto_Click(object sender, EventArgs e)
+        {
+            if(PictureBoxPersonalPhoto.Image != null)
+            {
+                PictureBoxPersonalPhoto.Image = null;
             }
         }
     }

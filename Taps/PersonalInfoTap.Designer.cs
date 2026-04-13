@@ -49,6 +49,8 @@
             this.RadioButtonOFF = new System.Windows.Forms.RadioButton();
             this.ButtonAddPhoto = new System.Windows.Forms.Button();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ButtonDeletePhoto = new System.Windows.Forms.Button();
+            this.ButtonUpdatePhoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumricAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPersonalPhoto)).BeginInit();
             this.SuspendLayout();
@@ -276,11 +278,42 @@
             this.ButtonAddPhoto.Visible = false;
             this.ButtonAddPhoto.Click += new System.EventHandler(this.ButtonAddPhoto_Click);
             // 
+            // ButtonDeletePhoto
+            // 
+            this.ButtonDeletePhoto.BackColor = System.Drawing.Color.Maroon;
+            this.ButtonDeletePhoto.FlatAppearance.BorderSize = 0;
+            this.ButtonDeletePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeletePhoto.ForeColor = System.Drawing.Color.White;
+            this.ButtonDeletePhoto.Location = new System.Drawing.Point(599, 446);
+            this.ButtonDeletePhoto.Name = "ButtonDeletePhoto";
+            this.ButtonDeletePhoto.Size = new System.Drawing.Size(132, 29);
+            this.ButtonDeletePhoto.TabIndex = 7;
+            this.ButtonDeletePhoto.Text = "Delete";
+            this.ButtonDeletePhoto.UseVisualStyleBackColor = false;
+            this.ButtonDeletePhoto.Visible = false;
+            this.ButtonDeletePhoto.Click += new System.EventHandler(this.ButtonDeletePhoto_Click);
+            // 
+            // ButtonUpdatePhoto
+            // 
+            this.ButtonUpdatePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ButtonUpdatePhoto.FlatAppearance.BorderSize = 0;
+            this.ButtonUpdatePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonUpdatePhoto.Location = new System.Drawing.Point(599, 481);
+            this.ButtonUpdatePhoto.Name = "ButtonUpdatePhoto";
+            this.ButtonUpdatePhoto.Size = new System.Drawing.Size(132, 29);
+            this.ButtonUpdatePhoto.TabIndex = 7;
+            this.ButtonUpdatePhoto.Text = "Update";
+            this.ButtonUpdatePhoto.UseVisualStyleBackColor = false;
+            this.ButtonUpdatePhoto.Visible = false;
+            this.ButtonUpdatePhoto.Click += new System.EventHandler(this.ButtonAddPhoto_Click);
+            // 
             // PersonalInfoTap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.ButtonUpdatePhoto);
+            this.Controls.Add(this.ButtonDeletePhoto);
             this.Controls.Add(this.ButtonAddPhoto);
             this.Controls.Add(this.RadioButtonOFF);
             this.Controls.Add(this.RadioButtonON);
@@ -337,5 +370,7 @@
         private System.Windows.Forms.RadioButton RadioButtonOFF;
         private System.Windows.Forms.Button ButtonAddPhoto;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
+        private System.Windows.Forms.Button ButtonDeletePhoto;
+        private System.Windows.Forms.Button ButtonUpdatePhoto;
     }
 }
