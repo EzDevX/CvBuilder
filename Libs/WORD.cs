@@ -139,6 +139,31 @@ namespace CvBuilder
             }
         }
 
+        public void ShiftEnter()
+        {
+            using (WordprocessingDocument MyWordFile = WordprocessingDocument.Open(WordFileName, true))
+            {
+                List<Paragraph> AllParagraphs = MyWordFile.MainDocumentPart.Document.Body.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>().ToList();
+                int Count = AllParagraphs.Count;
+
+                Run MyRun = new Run(new Break());
+
+                if (Count == 0)
+                {
+                    Paragraph OneParagraph = new Paragraph();
+                    OneParagraph.Append(MyRun);
+                    MyWordFile.MainDocumentPart.Document.Body.Append(OneParagraph);
+                    MyWordFile.MainDocumentPart.Document.Save();
+                }
+                else
+                {
+                    Paragraph LastParagraph = AllParagraphs[Count - 1];
+                    LastParagraph.Append(MyRun);
+                    MyWordFile.MainDocumentPart.Document.Save();
+                }
+            }
+        }
+
         public void AddTextLine(string Text , csFontSettings FontSettings)
         {
             using (WordprocessingDocument MyWordFile = WordprocessingDocument.Open(WordFileName , true))
@@ -245,7 +270,7 @@ namespace CvBuilder
                 }
 
                 MyRun.Append(MyRunProps);
-                MyRun.Append(new Text(" " + Text) { Space = SpaceProcessingModeValues.Preserve });
+                MyRun.Append(new Text(Text) { Space = SpaceProcessingModeValues.Preserve });
 
                 if(Count == 0)
                 {
