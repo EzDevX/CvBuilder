@@ -120,7 +120,7 @@ namespace CvBuilder
                 Engine MyEngine = new Engine();
                 MyEngine.MainForm = this;
 
-                MyEngine.LunchCV(MyPerson, MyFinishingTap.FileName() , Engine.enDesigns.enClean);
+                MyEngine.LunchCV(MyPerson, MyFinishingTap.FileName() , Engine.enDesigns.enDefault);
 
                 if (MessageBox.Show("Your CV is Ready!", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
