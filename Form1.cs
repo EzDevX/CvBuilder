@@ -143,7 +143,7 @@ namespace CvBuilder
             MyPersonalInfoTap.Gender("Male");
             MyPersonalInfoTap.MaritalStatus("Single");
             MyPersonalInfoTap.MilitaryState("Exempted");
-            MyPersonalInfoTap.SetPersonalPhoto(@"D:\Repos\CvBuilder\BahgatSaber.png");
+            MyPersonalInfoTap.SetPersonalPhoto(@"D:\Repos\CvBuilder\Example.png");
             MyPersonalInfoTap.Flag = false;
 
 

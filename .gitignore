@@ -2,20 +2,20 @@
 bin/
 obj/
 
-# Visual Studio settings
+# Visual Studio
 .vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Rider / VSCode
+# IDEs
 .idea/
 .vscode/
 
-# NuGet packages
-*.nupkg
+# NuGet
 packages/
+*.nupkg
 
 # Logs
 *.log
@@ -24,11 +24,9 @@ packages/
 .DS_Store
 Thumbs.db
 
-# Optional: temporary files
+# Temp files
 *.tmp
 *.cache
+
+# Personal / local files (optional)
 TODOs.txt
-BahgatSaber.png
-*.jpeg
-*.jpg
-*.docx
